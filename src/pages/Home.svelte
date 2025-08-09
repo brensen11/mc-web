@@ -1,7 +1,14 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import logoBanner from "../assets/img/logo-banner.png";
-    const videoSrc = "/video/bg.mp4";
+
+    const getRandomVideo = () => {
+        const part = Math.floor(Math.random() * 14);
+        let videoSrc = `/video/segment_0${part < 10 ? '0' : ''}${part}.mp4`;
+        console.log(videoSrc);
+        return videoSrc;
+    }
+    const videoSrc = getRandomVideo()
 
     const serverIp = "play.brensenvillegas.com";
     const discordLink = "https://discord.gg/your-server";
@@ -29,10 +36,16 @@
     let videoElement: HTMLVideoElement;
     onMount(() => {
         videoElement.addEventListener("loadedmetadata", () => {
-            const randomTime = Math.random() * (videoElement.duration - 60 * 2);
+            const randomTime = Math.random() * (videoElement.duration - 20);
             videoElement.currentTime = randomTime;
-            console.log("RUN");
+            console.log(randomTime)
         });
+
+        videoElement.addEventListener("ended", () => {
+            console.log("called")
+            videoElement.src = getRandomVideo();
+            videoElement.play();
+        })
     });
 
     function copyIp() {
@@ -46,13 +59,12 @@
         class="w-full h-full object-cover"
         muted
         autoplay
-        loop
         playsinline
         preload="metadata"
     >
         <source src={videoSrc} type="video/mp4" />
     </video>
-    <div class="absolute inset-0 bg-base-100/20 backdrop-blur-xs"></div>
+    <div class="absolute inset-0 bg-base-100/40 backdrop-blur-tiny"></div>
     <div
         class="absolute inset-0 bg-linear-to-b from-transparent to-base-100"
     ></div>
@@ -106,10 +118,14 @@
     }
     @keyframes wave {
         0% {
-            transform: translateY(-5%);
+            transform: translateY(-20%);
         }
         100% {
-            transform: tranlsateY(5%);
+            transform: tranlsateY(20%);
         }
+    }
+
+    .backdrop-blur-tiny {
+        backdrop-filter: blur(2px);
     }
 </style>
