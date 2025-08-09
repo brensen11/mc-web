@@ -61,7 +61,7 @@
 <main class="flex flex-col flex-1 justify-around align-middle p-4 max-w-screen-sm mx-auto relative">
     <img class="wave" src={logoBanner} alt="logo banner" />
     <div class="flex justify-center">
-        <div class="relative badge bg-base-200 py-6 px-20 shadow flex-row justify-center">
+        <!-- <div class="relative badge bg-base-200 py-6 px-20 shadow flex-row justify-center">
             <code class="font-mono font-light text-xl text-lime-500">{serverIp}</code>
             <button
                 class="btn btn-primary absolute right-1"
@@ -91,7 +91,7 @@
                     /></svg
                 >
             </button>
-        </div>
+        </div> -->
     </div>
 
     <!-- Insert Future Content -->

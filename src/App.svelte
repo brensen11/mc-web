@@ -6,15 +6,15 @@
   import Discord from "./pages/Discord.svelte";
   import About from "./pages/About.svelte";
   import NotFound from "./pages/NotFound.svelte";
-    import Mods from "./pages/Mods.svelte";
+  import Mods from "./pages/Mods.svelte";
 
   const routes = {
-    "/": Home,
-    "/join": Join,
-    "/discord": Discord,
-    "/about": About,
-    "/mods" : Mods,
-    "/*": NotFound,
+    // "/": Home,
+    // "/join": Join,
+    // "/discord": Discord,
+    // "/about": About,
+    // "/mods" : Mods,
+    "/*": Home,
   };
 
   const navLinks = [
