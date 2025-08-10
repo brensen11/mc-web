@@ -8,6 +8,8 @@
         }[]
     };
     let { navLinks } : Props = $props();
+    let drawerOpen = $state(false);
+    let currentUrl = window.location.href;
 </script>
 
 <div class="hidden md:flex navbar justify-center p-5 gap-10">
@@ -19,15 +21,15 @@
 </div>
 
 <div class="drawer md:hidden">
-    <input id="menu-drawer" type="checkbox" class="drawer-toggle" />
+    <input id="menu-drawer" type="checkbox" class="drawer-toggle" bind:checked={drawerOpen} />
     <div class="drawer-content">
         <label for="menu-drawer" class="btn btn-ghost mt-2 ml-2 bg-base-200/50 border-base-100/30 p-3 text-lg"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg> Menu</label>
     </div>
         <div class="drawer-side">
         <label for="menu-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-        <ul class="menu gap-6 bg-base-200 text-base-content min-h-full w-48 p-4">
+        <ul class="menu divide-y divide-neutral-600 gap-6 bg-base-200 text-base-content min-h-full w-48 p-4">
             {#each navLinks as navLink}
-            <li><a class="p-3 text-lg" href={navLink.path} use:link>{navLink.label}</a></li>
+            <li><a class="btn justify-start text-left p-3 text-lg {currentUrl.endsWith(navLink.path) ? "bg-neutral-200" : ""}" onclick={() => {drawerOpen = false}} href={navLink.path} use:link>{navLink.label}</a></li>
             {/each}
         </ul>
     </div>
