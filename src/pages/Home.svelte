@@ -5,7 +5,6 @@
     const getRandomVideo = () => {
         const part = Math.floor(Math.random() * 14);
         let videoSrc = `/video/segment_0${part < 10 ? '0' : ''}${part}.mp4`;
-        console.log(videoSrc);
         return videoSrc;
     }
     const videoSrc = getRandomVideo()
@@ -38,11 +37,9 @@
         videoElement.addEventListener("loadedmetadata", () => {
             const randomTime = Math.random() * (videoElement.duration - 20);
             videoElement.currentTime = randomTime;
-            console.log(randomTime)
         });
 
         videoElement.addEventListener("ended", () => {
-            console.log("called")
             videoElement.src = getRandomVideo();
             videoElement.play();
         })

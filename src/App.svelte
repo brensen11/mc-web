@@ -32,7 +32,7 @@
     },
     {
       label: "Mods",
-      path: "/mods"
+      path: "/mods",
     },
     {
       label: "About",
