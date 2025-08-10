@@ -41,7 +41,7 @@
   ];
 </script>
 
-<div class="flex flex-col h-screen">
+<div class="flex flex-col h-svh">
   <Navbar {navLinks} />
   <Router {routes} />
 </div>

@@ -1,5 +1,6 @@
 <script lang="ts">
     import { link } from 'svelte-spa-router'
+    import { location } from "svelte-spa-router";
 
     interface Props {
         navLinks: {
@@ -9,7 +10,6 @@
     };
     let { navLinks } : Props = $props();
     let drawerOpen = $state(false);
-    let currentUrl = window.location.href;
 </script>
 
 <div class="hidden md:flex navbar justify-center p-5 gap-10">
@@ -27,9 +27,12 @@
     </div>
         <div class="drawer-side">
         <label for="menu-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
-        <ul class="menu divide-y divide-neutral-600 gap-6 bg-base-200 text-base-content min-h-full w-48 p-4">
-            {#each navLinks as navLink}
-            <li><a class="btn justify-start text-left p-3 text-lg {currentUrl.endsWith(navLink.path) ? "bg-neutral-200" : ""}" onclick={() => {drawerOpen = false}} href={navLink.path} use:link>{navLink.label}</a></li>
+        <ul class="menu bg-base-200 text-base-content min-h-full w-52 p-4">
+            {#each navLinks as navLink, i}
+            <li><a class="btn my-2 justify-start align-center text-left px-4 py-6 text-lg {$location.endsWith(navLink.path) ? "bg-neutral-800" : ""}" onclick={() => {drawerOpen = false}} href={navLink.path} use:link>{navLink.label}</a></li>
+            {#if i !== navLinks.length - 1}
+                <hr class="border-t border-neutral-600" />
+            {/if}
             {/each}
         </ul>
     </div>

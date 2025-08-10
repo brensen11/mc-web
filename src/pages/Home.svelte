@@ -50,7 +50,7 @@
     }
 </script>
 
-<div class="absolute h-screen inset-0 -z-10 pointer-events-none">
+<div class="absolute h-svh inset-0 -z-10 pointer-events-none">
     <video
         bind:this={videoElement}
         class="w-full h-full object-cover"
