@@ -15,7 +15,7 @@
 <div class="hidden md:flex navbar justify-center p-5 gap-10">
     {#each navLinks as navLink}
         <div class="navbar-center">
-            <a class="btn btn-ghost p-5 text-xl" href={navLink.path} use:link>{navLink.label}</a>
+            <a class="btn btn-ghost p-5 text-xl {$location.endsWith(navLink.path) ? "bg-primary/25" : ""}" href={navLink.path} use:link>{navLink.label}</a>
         </div>
     {/each}
 </div>
@@ -29,7 +29,7 @@
         <label for="menu-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
         <ul class="menu bg-base-200 text-base-content min-h-full w-52 p-4">
             {#each navLinks as navLink, i}
-            <li><a class="btn my-2 justify-start align-center text-left px-4 py-6 text-lg {$location.endsWith(navLink.path) ? "bg-neutral-800" : ""}" onclick={() => {drawerOpen = false}} href={navLink.path} use:link>{navLink.label}</a></li>
+            <li><a class="btn my-2 justify-start align-center text-left px-4 py-6 text-lg {$location.endsWith(navLink.path) ? "bg-primary/20" : ""}" onclick={() => {drawerOpen = false}} href={navLink.path} use:link>{navLink.label}</a></li>
             {#if i !== navLinks.length - 1}
                 <hr class="border-t border-neutral-600" />
             {/if}

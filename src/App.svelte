@@ -9,12 +9,12 @@
   import Mods from "./pages/Mods.svelte";
 
   const routes = {
-    // "/": Home,
-    // "/join": Join,
-    // "/discord": Discord,
-    // "/about": About,
-    // "/mods" : Mods,
-    "/*": Home,
+    "/": Home,
+    "/join": Join,
+    "/discord": Discord,
+    "/about": About,
+    "/mods" : Mods,
+    "/*": NotFound,
   };
 
   const navLinks = [
