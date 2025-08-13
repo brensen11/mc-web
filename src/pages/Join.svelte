@@ -7,30 +7,21 @@
 
     import installSrc from "../assets/img/Install.png";
     import ramSrc from "../assets/img/RAM.png";
+    import CopyIp from "../lib/CopyIP.svelte";
+    import { Download } from 'lucide-svelte'
     const addServerSrc = "/AddServer.gif";
 
-    let copied = false;
-
-    async function copyIP() {
-        try {
-            await navigator.clipboard.writeText(serverIP);
-            copied = true;
-            setTimeout(() => (copied = false), 1500);
-        } catch {}
-    }
 </script>
 
 <main class="flex-1 container mx-auto px-4 py-8 space-y-8">
-    <section class="text-center space-y-3">
+    <section class="flex flex-col items-center text-center space-y-3">
         <h1 class="text-3xl font-bold">How to Join Fwends SMP</h1>
         <p class="text-base-content/80">
             Welcome! Fwends is a Forge modpack. Follow these quick steps to get
             in.
         </p>
 
-        <button class="btn btn-primary join-item w-fit" on:click={copyIP}>
-            Copy IP: {serverIP}
-        </button>
+        <CopyIp />
     </section>
 
     <div class="grid lg:grid-cols-3 gap-6">
@@ -73,7 +64,7 @@
                             href={prismUrl}
                             target="_blank"
                             rel="noreferrer"
-                            class="btn btn-primary">Download Prism</a
+                            class="btn btn-primary">Download Prism <Download /> </a
                         >
                     </div>
                     <p class="text-base-content/80">
@@ -100,7 +91,7 @@
                         Grab the prebuilt modpack zip (no need to unzip).
                     </p>
                     <a href={modpackUrl} target="_blank" rel="noreferrer" class="btn btn-primary w-fit"
-                        >Download <code>fwends_modpack.zip</code></a
+                        >Download <code>fwends_modpack.zip</code> <Download /> </a
                     >
                 </div>
             </section>
@@ -181,11 +172,7 @@
 
                     <img src={addServerSrc} alt="Adding Minecraft Server" />
 
-                    <div class="mt-3">
-                        <button class="btn btn-primary" on:click={copyIP}>
-                            Copy IP ({serverIP})
-                        </button>
-                    </div>
+                    <CopyIp class="mt-4 bg-neutral-900" />
                 </div>
             </section>
 

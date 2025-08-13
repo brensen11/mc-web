@@ -1,6 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import logoBanner from "../assets/img/FwendsSMP.png";
+    import CopyIp from "../lib/CopyIP.svelte";
 
     const getRandomVideo = () => {
         const part = Math.floor(Math.random() * 14);
@@ -9,7 +10,6 @@
     }
     const videoSrc = getRandomVideo()
 
-    const serverIp = "play.brensenvillegas.com";
     const discordLink = "https://discord.gg/your-server";
     const bluemapUrl = "https://map.yourserver.com";
     const modpackLink = "https://modrinth.com/modpack/your-pack";
@@ -44,10 +44,6 @@
             videoElement.play();
         })
     });
-
-    function copyIp() {
-        navigator.clipboard.writeText(serverIp);
-    }
 </script>
 
 <div class="absolute h-svh inset-0 -z-10 pointer-events-none">
@@ -71,39 +67,7 @@
 
     <!-- copy IP -->
     <div class="flex justify-center">
-        <div class="relative badge bg-base-200 h-fit p-0 shadow flex flex-row justify-between">
-            <div>
-                <code class="px-4 text-sm font-mono font-light md:text-xl text-lime-500">{serverIp}</code>
-            </div>
-            <button
-                class="btn btn-primary"
-                on:click={copyIp}
-                aria-label="Copy Minecraf IP Address"
-            >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="lucide lucide-copy-icon lucide-copy"
-                    ><rect
-                        width="14"
-                        height="14"
-                        x="8"
-                        y="8"
-                        rx="2"
-                        ry="2"
-                    /><path
-                        d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"
-                    /></svg
-                >
-            </button>
-        </div>
+        <CopyIp />
     </div>
 </main>
 

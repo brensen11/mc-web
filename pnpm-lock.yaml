@@ -30,6 +30,9 @@ importers:
       daisyui:
         specifier: ^5.0.50
         version: 5.0.50
+      lucide-svelte:
+        specifier: ^0.539.0
+        version: 0.539.0(svelte@5.38.0)
       svelte:
         specifier: ^5.37.3
         version: 5.38.0
@@ -595,6 +598,11 @@ packages:
   locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
 
+  lucide-svelte@0.539.0:
+    resolution: {integrity: sha512-p4k3GOje/9Si1eIkg1W1OQUhozeja5Ka5shjVpfyP5X2ye+B7sfyMnX3d5D2et+MYJwUFGrMna5MIYgq6bLfqw==}
+    peerDependencies:
+      svelte: ^3 || ^4 || ^5.0.0-next.42
+
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
@@ -1143,6 +1151,10 @@ snapshots:
       lightningcss-win32-x64-msvc: 1.30.1
 
   locate-character@3.0.0: {}
+
+  lucide-svelte@0.539.0(svelte@5.38.0):
+    dependencies:
+      svelte: 5.38.0
 
   magic-string@0.30.17:
     dependencies:
