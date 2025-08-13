@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import logoBanner from "../assets/img/logo-banner.png";
+    import logoBanner from "../assets/img/FwendsSMP.png";
 
     const getRandomVideo = () => {
         const part = Math.floor(Math.random() * 14);
@@ -62,18 +62,21 @@
         <source src={videoSrc} type="video/mp4" />
     </video>
     <div class="absolute inset-0 bg-base-100/40 backdrop-blur-tiny"></div>
-    <div
-        class="absolute inset-0 bg-linear-to-b from-transparent to-base-100"
-    ></div>
+    <div class="absolute bottom-0 left-0 right-0 h-48 bg-linear-to-b from-transparent to-base-100"></div>
 </div>
 
-<main class="flex flex-col flex-1 justify-around align-middle p-4 max-w-screen-sm mx-auto relative">
+<main class="flex flex-col flex-1 justify-around align-middle max-w-screen-sm p-4 mx-auto relative">
+    <!-- banner -->
     <img class="wave" src={logoBanner} alt="logo banner" />
+
+    <!-- copy IP -->
     <div class="flex justify-center">
-        <!-- <div class="relative badge bg-base-200 py-6 px-20 shadow flex-row justify-center">
-            <code class="font-mono font-light text-xl text-lime-500">{serverIp}</code>
+        <div class="relative badge bg-base-200 h-fit p-0 shadow flex flex-row justify-between">
+            <div>
+                <code class="px-4 text-sm font-mono font-light md:text-xl text-lime-500">{serverIp}</code>
+            </div>
             <button
-                class="btn btn-primary absolute right-1"
+                class="btn btn-primary"
                 on:click={copyIp}
                 aria-label="Copy Minecraf IP Address"
             >
@@ -100,13 +103,8 @@
                     /></svg
                 >
             </button>
-        </div> -->
+        </div>
     </div>
-
-    <!-- Insert Future Content -->
-    <!-- {#each Array.from({length:300}, (_, i) => i) as i}
-        <div>Item {i}</div>
-    {/each} -->
 </main>
 
 <style>
@@ -115,10 +113,10 @@
     }
     @keyframes wave {
         0% {
-            transform: translateY(-20%);
+            transform: translateY(-10%);
         }
         100% {
-            transform: tranlsateY(20%);
+            transform: tranlsateY(10%);
         }
     }
 
