@@ -10,10 +10,6 @@
     }
     const videoSrc = getRandomVideo()
 
-    const discordLink = "https://discord.gg/your-server";
-    const bluemapUrl = "https://map.yourserver.com";
-    const modpackLink = "https://modrinth.com/modpack/your-pack";
-
     let serverStatus: string = "Loading...";
     let playersOnline: string[] = [];
 

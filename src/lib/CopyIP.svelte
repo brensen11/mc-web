@@ -1,6 +1,5 @@
-<script>
+<script lang="ts">
     const serverIp = "play.brensenvillegas.com";
-    import { fade } from "svelte/transition";
     import { Copy, Check } from "lucide-svelte";
     let props = $props();
 
@@ -10,7 +9,9 @@
         navigator.clipboard.writeText(serverIp).then(() => {
             copied = true;
             setTimeout(() => (copied = false), 1500);
-        });
+        }).catch((e) => {
+            console.error("Not sure: ", e)
+        })
     }
 </script>
 
