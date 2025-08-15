@@ -12,7 +12,7 @@
     "/": Home,
     "/join": Join,
     "/discord": Discord,
-    "/about": About,
+    // "/about": About,
     "/mods" : Mods,
     "/*": NotFound,
   };
@@ -34,10 +34,10 @@
       label: "Mods",
       path: "/mods",
     },
-    {
-      label: "About",
-      path: "/about",
-    },
+    // {
+    //   label: "About",
+    //   path: "/about",
+    // },
   ];
 </script>
 
