@@ -115,7 +115,6 @@
                     </ol>
                     <div class="flex flex-col my-4 gap-4 items-center w-full">
                         <img
-                            class="w-[90%]"
                             src={installSrc}
                             alt="Add Instance to Prism"
                         />
