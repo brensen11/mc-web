@@ -42,7 +42,7 @@
 
   let title = "Fwends SMP";
   let description = "Welcome to the Fwends Survial Multiplayer Server!";
-  let image = "../assets/img/Fwends SMP Page Preview.png";
+  let image = "/Fwends SMP Page Preview.png";
   let url = "http://mc.brensenvillegas.com";
 </script>
 
