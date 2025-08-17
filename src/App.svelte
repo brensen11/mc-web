@@ -39,21 +39,8 @@
     //   path: "/about",
     // },
   ];
-
-  let title = "Fwends SMP";
-  let description = "Welcome to the Fwends Survial Multiplayer Server!";
-  let image = "/Fwends SMP Page Preview.png";
-  let url = "http://mc.brensenvillegas.com";
 </script>
 
-<svelte:head>
-  <title>{title}</title>
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:image" content={image} />
-  <meta property="og:url" content={url} />
-  <meta property="og:type" content="website" />
-</svelte:head>
 
 <div class="flex flex-col h-svh">
   <Navbar {navLinks} />
